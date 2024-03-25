@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: white;
+
+    overflow: hidden;
+}
+
+
+#main {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+
+    width: 100%;
+    height: 100%;
+}
+
+
+#main #preview {
+    grid-row: 1 / span 9;
+    grid-column: 4 / span 10;
+}
+#main #preview #preview-skeleton {
+    display: block;
+
+    border-radius: 20px;
+
+    margin: 1.5%;
+    margin-left: 1%;
+    margin-bottom: 2.5%;
+
+    width: 97.5%;
+    height: 92%;
+
+    background: linear-gradient(90deg, #f0f0f0 15%, #f8f8f8 50%, #f0f0f0 85%);
+    background-size: 200% 100%;
+    animation: skeleton 0.75s infinite linear;
+}
+#main #preview #preview-video {
+    border-radius: 20px;
+
+    margin: 1.5%;
+    margin-left: 1%;
+    margin-bottom: 2.5%;
+
+    width: 97.5%;
+    height: 92%;
+
+    border-radius: 20px;
+}
+#preview-loader {
+    display: none;
+    border: 16px solid skyblue;
+    border-radius: 50%;
+    border-top: 16px solid white;
+
+    width: 120px;
+    height: 120px;
+
+    animation: spin 2s linear infinite;
+
+    position: fixed;
+
+    z-index: 5;
+
+    top: calc(40% - 75px);
+    right: calc(35% - 75px);
+}
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+@keyframes skeleton {
+    0% {background-position: 100% 50%;}
+    100% {background-position: -100% 50%;}
+}
+
+
+
+#main #feedback {
+    grid-row: 1 / span 9;
+    grid-column: 1 / span 3;
+}
+#main #feedback h2 {
+    color: darkslategrey;
+}
+#main #feedback #feedback-skeleton {
+    border-radius: 20px;
+
+    display: block;
+
+    margin: 1.5%;
+    margin-left: 4%;
+    margin-right: 0;
+    margin-bottom: 2.5%;
+    margin-top: 3.5%;
+
+    width: 96%;
+    height: 92%;
+
+    background: linear-gradient(90deg, #f0f0f0 15%, #f8f8f8 50%, #f0f0f0 85%);
+    background-size: 200% 100%;
+    animation: skeleton 0.75s infinite linear;
+}
+#main #feedback #feedback-text {
+    margin: 1.5%;
+    margin-left: 10%;
+    margin-right: 0;
+    margin-bottom: 2.5%;
+    margin-top: 3.5%;
+
+    width: 96%;
+    height: 92%;
+    overflow-y: auto; 
+}
+
+
+#main #upload {
+    grid-row: 10;
+    grid-column: 1 / span 10;
+}
+#main #upload #upload-form {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+
+    height: 100%;
+    width: 100%;
+}
+
+#main #upload #upload-form #upload-form-submit {
+    grid-column: 8 / span 10;
+
+    width: 80%;
+    height: 80%;
+
+    border-radius: 40px;
+
+    background-color: white;
+
+    border: 1px lightgrey solid;
+}
+#main #upload #upload-form #upload-form-choose {
+    grid-column: 1 / span 7;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    border-top-right-radius: 10px;
+}
+
+
+
+button, .button {
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
